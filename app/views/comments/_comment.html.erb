@@ -1,0 +1,12 @@
+<li>
+  <% debugger %>
+  <%= comment.message %> -
+  <small>Submitted <%=comment.created_at %> ago</small>
+  <%= form_for [comment, Comment.new] do |f| %>
+      <%= f.text_area :message, placeholder: "Add a Reply" %><br/>
+      <%= f.submit "Reply"  %>
+  <% end %>
+  <ul>
+    <%= render partial: 'comments/comment', collection: comment.comments %>
+  </ul>
+</li>

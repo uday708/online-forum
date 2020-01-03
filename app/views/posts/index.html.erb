@@ -1,9 +1,8 @@
- <div class="table-responsive table-listing">
-  <div class="clearfix">
-    <% @posts.each do |post| %>
-    <%= post.title %>
-    <%= post.content %>
-      <%= link_to "Edit", edit_post_path(post) %>
-    <% end %>
+<% @posts.each do |post| %>
+  <div class="post-box border p-4 mb-3 rounded bg-cream">
+    <p class="text-muted mb-2">Posted by: <%= post.author.humanize %></p>
+    <h3><%= link_to post.title.capitalize, post_path(post) %></h3>
+    <p class="mb-4"><%= post.content.truncate_words(10) %></p>
+    <p class="mb-0"><%= link_to "Read More", post_path(post)%></p>
   </div>
-</div>
+<% end %>

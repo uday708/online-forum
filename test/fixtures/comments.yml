@@ -2,10 +2,12 @@
 
 one:
   user: one
-  post: one
+  for_comment: one
+  for_comment_type: For comment
   message: MyString
 
 two:
   user: two
-  post: two
+  for_comment: two
+  for_comment_type: For comment
   message: MyString

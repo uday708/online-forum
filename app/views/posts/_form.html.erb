@@ -1,6 +1,7 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :title %>
   <%= f.input :content %>
+  <%= f.input :author %>
   <%= f.submit %>
   <%= link_to("Delete", method: :delete, data: {confirm: "Are you sure you want to delete this?"}) %>
 <% end %>

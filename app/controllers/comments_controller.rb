@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
   before_action :load_resource
 
+  def new
+    @comment = Comment.new
+  end
+
   def create
-    @comment = post.comments.new(params[:comment].permit(:message))
+    @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
       redirect_to post_path(@post)
@@ -18,7 +22,12 @@ class CommentsController < ApplicationController
 
   private
 
+  def comment_params
+    params[:comment].permit(:message)
+  end
+
   def load_resource
-    @post = Post.find(params[:post_id])
+    @commentable = Comment.find_by(id: params[:comment_id]) if params[:comment_id]
+    @commentable = Post.find_by(id: params[:article_id]) if params[:post_id]
   end
 end

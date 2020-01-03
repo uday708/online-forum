@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :load_resource, only: [:destroy, :edit, :update, :show]
 
   def index
-    debugger
     @posts = Post.all
   end
 
