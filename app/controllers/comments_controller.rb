@@ -9,14 +9,14 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to post_path(@post)
+      redirect_to root_path, notice: 'Your comment successfully posted!'
     else
       redirect_to posts_path
     end
   end
 
   def delete
-    @post.destroy
+    @commentable.destroy
     redirect_to posts_path
   end
 
@@ -28,6 +28,7 @@ class CommentsController < ApplicationController
 
   def load_resource
     @commentable = Comment.find_by(id: params[:comment_id]) if params[:comment_id]
-    @commentable = Post.find_by(id: params[:article_id]) if params[:post_id]
+    @commentable = Post.find_by(id: params[:post_id]) if params[:post_id]
   end
 end
+

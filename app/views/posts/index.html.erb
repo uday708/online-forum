@@ -1,6 +1,7 @@
+<%= link_to "New Post", new_post_path, class: "btn btn-primary mb-5" %>
 <% @posts.each do |post| %>
   <div class="post-box border p-4 mb-3 rounded bg-cream">
-    <p class="text-muted mb-2">Posted by: <%= post.author.humanize %></p>
+    <p class="text-muted mb-2">Posted by: <%= post.user.username.humanize %></p>
     <h3><%= link_to post.title.capitalize, post_path(post) %></h3>
     <p class="mb-4"><%= post.content.truncate_words(10) %></p>
     <p class="mb-0"><%= link_to "Read More", post_path(post)%></p>

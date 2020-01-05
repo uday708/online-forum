@@ -1,7 +1,12 @@
 <%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.input :author %>
-  <%= f.submit %>
-  <%= link_to("Delete", method: :delete, data: {confirm: "Are you sure you want to delete this?"}) %>
+  <div class="form-group">
+    <%= f.input :title %>
+  </div>
+  <div class="form-group" >
+    <%= f.input :content %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "New Post", class: "btn btn-primary" %>
+    <%= link_to("Delete", method: :delete, class: "btn btn-primary mt-5",data: {confirm: "Are you sure you want to delete this?"}) %>
+  </div>
 <% end %>

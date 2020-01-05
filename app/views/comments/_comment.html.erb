@@ -1,8 +1,7 @@
 <li>
-  <% debugger %>
   <%= comment.message %> -
-  <small>Submitted <%=comment.created_at %> ago</small>
-  <%= form_for [comment, Comment.new] do |f| %>
+  <small>Submitted on:- <%= comment.created_at.to_time.utc %>, by <%= comment.user.username %> </small> 
+  <%= simple_form_for [comment, Comment.new] do |f| %>
       <%= f.text_area :message, placeholder: "Add a Reply" %><br/>
       <%= f.submit "Reply"  %>
   <% end %>

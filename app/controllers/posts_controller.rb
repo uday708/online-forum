@@ -5,15 +5,12 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def all_feeds
-    @posts = Post.all
-  end
-
   def new
     @post = Post.new
   end
 
   def create
+    debugger
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
@@ -22,10 +19,6 @@ class PostsController < ApplicationController
       render :new
     end
   end
-
-  def edit;end
-
-  def show;end
 
   def update
     if @post.update(post_params)
