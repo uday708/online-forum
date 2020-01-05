@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: dd1fe96509e18316a4398c15836516b2053f88c5
+  branch: master
+  specs:
+    faker (2.10.0)
+      i18n (>= 1.6, < 1.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -121,6 +129,9 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.13.0)
+    minitest-rails (5.2.0)
+      minitest (~> 5.10)
+      railties (~> 5.2.0)
     msgpack (1.3.1)
     nio4r (2.5.2)
     nokogiri (1.10.7)
@@ -238,9 +249,11 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   factory_bot_rails
+  faker!
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  minitest-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)

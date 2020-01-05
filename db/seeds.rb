@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'factory_bot_rails'
+include FactoryBot::Syntax::Methods
+
+if Rails.env.development? || Rails.env.staging?
+  4.times{create(:comment, :post_comment)}
+  puts "Email:- #{User.last.email} Users Password:- example@123"
+end
