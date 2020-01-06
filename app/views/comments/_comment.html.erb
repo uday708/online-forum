@@ -2,8 +2,10 @@
   <%= comment.message %> -
   <small>Submitted on:- <%= comment.created_at.to_time.utc %>, by <%= comment.user.username %> </small> 
   <%= simple_form_for [comment, Comment.new] do |f| %>
-      <%= f.text_area :message, placeholder: "Add a Reply" %><br/>
-      <%= f.submit "Reply"  %>
+	  <div class="form-group">
+	    <%= f.text_area :message, placeholder: "Add a Reply", class: "form-control" %>
+	  </div>
+      <p class="text-right"><%= f.submit "Reply", class:'btn btn-primary btn-sm'%></p>
   <% end %>
   <ul>
     <%= render partial: 'comments/comment', collection: comment.comments %>
