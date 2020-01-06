@@ -1,24 +1,28 @@
-# README
+# Online Forum
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```sh-session
+ * git clone git@github.com:uday708/matrixcalculator.git
+ * Ruby version - '2.6.3'
+ * bundle install
+ * rake db:setup (seeds data will create)
+ * rails s -p 3000
 
-Things you may want to cover:
+```
 
-* Ruby version
+```sh-session
+User Cases Followed:-
 
-* System dependencies
+* User Signup.
+* User Can  create Post.
+* Another User can comment on that post.
+* User can reply another user post.
+```
 
-* Configuration
+```sh-session
+ * System dependencies - install rvm, rvm use 2.6.3
+ * rails version 5.2.4
+ ```
 
-* Database creation
+* Database initialization - sqlite3, Go through the schema for  database structure.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run the test suite -> e.g. {ruby -Itest test/controller/posts_controller_test.rb}
