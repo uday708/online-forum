@@ -1,12 +1,12 @@
 <%= simple_form_for @post do |f| %>
   <div class="form-group">
-    <%= f.input :title %>
+    <%= f.input :title, class: "form-control" %>
   </div>
   <div class="form-group" >
-    <%= f.input :content %>
+    <%= f.input :content, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.submit "Submit Post", class: "btn btn-primary" %>
-    <%= link_to("Delete", method: :delete, class: "btn btn-primary mt-5",data: {confirm: "Are you sure you want to delete this?"}) %>
   </div>
+    <%= link_to("Delete", method: :delete, class: "btn btn-danger",data: {confirm: "Are you sure you want to delete this?"}) %>
 <% end %>
